@@ -42,7 +42,7 @@ border-radius: 40px 40px 40px 40px;
 
 
 
-		</style>
+		</style>	<script src="jquery-3.2.1.min.js"></script>
 	</head>
 	<body>
 		<div id="idcaja">
@@ -60,11 +60,34 @@ var  quees=""
 
 function es(){
 	quees=document.getElementById("id1").value;
-if(quees=="sssss"){window.location="https://giovannitec.github.io/freepelis/"}//24
+    console.log(datos.inicio.key);
+if(quees==datos.inicio.key){window.location=datos.inicio.web}//24
 
 
 
 }
+
+var datos=[];
+
+$.ajax({
+               
+               url:   'mi.json',
+                dataType:  'json',
+               type:  'get',
+               cache:false,
+               success:  function (data) {
+                datos=data;
+                      // $(data.inicio).html(response);
+                  //    console.log(data.inicio.uno);
+    //       location.href=data.inicio.uno;
+
+  
+               }
+       });
+
+
+
+
 		</script>
 	</body>
 </html>
